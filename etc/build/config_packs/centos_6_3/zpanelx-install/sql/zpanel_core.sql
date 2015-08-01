@@ -62,18 +62,18 @@ INSERT  INTO `x_accounts` (
 VALUES
     (
     1,
-    'zadmin',
+    'wbiadmin',
     'v.eCCwjd4xAGWagHafqod6SMASr25Na',
     '/L8ewHozMz0EqAmmILPFN2',
     'zadmin@localhost',
     1,
     1,
     1,
-    'zpanelx',
+    'ZstyleX-master',
     'default',
     1,
     0,
-    'Welcome to your new ZPanel installation! You can remove this message from the Client Notice Manager module. This module allows you to notify your clients of service outages, upgrades and new features etc :-)',
+    'Welcome to your new wbiPanel installation! You can remove this message from the Client Notice Manager module. This module allows you to notify your clients of service outages, upgrades and new features etc :-)',
     NULL,
     0,
     NULL
