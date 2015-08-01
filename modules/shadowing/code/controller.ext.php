@@ -34,7 +34,7 @@ class module_controller extends ctrl_module
         global $zdbh;
         global $controller;
         $currentuser = ctrl_users::GetUserDetail();
-        if ($currentuser['username'] == 'zadmin') {
+        if ($currentuser['username'] == 'wbiadmin') {
             $sql = "SELECT * FROM x_accounts WHERE ac_deleted_ts IS NULL ORDER BY ac_user_vc";
             $numrows = $zdbh->prepare($sql);
             $numrows->execute();
@@ -48,7 +48,7 @@ class module_controller extends ctrl_module
         //$numrows = $zdbh->query($sql);
         if ($numrows->fetchColumn() <> 0) {
             $sql = $zdbh->prepare($sql);
-            if ($currentuser['username'] == 'zadmin') {
+            if ($currentuser['username'] == 'wbiadmin') {
                 //noi bind needed
             } else {
                 //bind the username
@@ -79,7 +79,7 @@ class module_controller extends ctrl_module
         global $controller;
         runtime_csfr::Protect();
         $currentuser = ctrl_users::GetUserDetail();
-        if ($currentuser['username'] == 'zadmin') {
+        if ($currentuser['username'] == 'wbiadmin') {
             $sql = "SELECT * FROM x_accounts WHERE ac_deleted_ts IS NULL ORDER BY ac_user_vc";
             $numrows = $zdbh->prepare($sql);
         } else {
@@ -90,7 +90,7 @@ class module_controller extends ctrl_module
         if ($numrows->execute()) {
             if ($numrows->fetchColumn() <> 0) {
                 $sql = $zdbh->prepare($sql);
-                if ($currentuser['username'] == 'zadmin') {
+                if ($currentuser['username'] == 'wbiadmin') {
                     //no bind needed
                 } else {
                     //bind the username

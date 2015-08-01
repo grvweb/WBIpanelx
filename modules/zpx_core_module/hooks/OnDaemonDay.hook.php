@@ -50,7 +50,7 @@ echo "END getting module version update information!" . fs_filehandler::NewLine(
  * We also collec the email address of the default 'zadmin' account to enable automatic email
  * notficiations of new releases.
  */
-$zdbh->bindQuery('SELECT ac_email_vc AS email FROM x_accounts WHERE ac_user_vc = :user', array(':user' => 'zadmin'));
+$zdbh->bindQuery('SELECT ac_email_vc AS email FROM x_accounts WHERE ac_user_vc = :user', array(':user' => 'wbiadmin'));
 $zadmin = $zdbh->returnRow();
 
 ws_generic::DoPostRequest('http://api.zpanelcp.com/hello.json', "version=" . sys_versions::ShowZpanelVersion() . "&platform=" . sys_versions::ShowOSPlatformVersion() . "&url=" . ctrl_options::GetSystemOption('zpanel_domain') . "&zemail=" . $zadmin['email']);

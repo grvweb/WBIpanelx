@@ -73,7 +73,7 @@ class module_controller extends ctrl_module
             $res = array();
             $sql->execute();
             while ($rowclients = $sql->fetch()) {
-                if ($rowclients['ac_user_vc'] != "zadmin") {
+                if ($rowclients['ac_user_vc'] != "wbiadmin") {
                     //$numrowclients = $zdbh->query("SELECT COUNT(*) FROM x_accounts WHERE ac_reseller_fk=" . $rowclients['ac_id_pk'] . " AND ac_deleted_ts IS NULL")->fetch();
                     $numrows = $zdbh->prepare("SELECT COUNT(*) FROM x_accounts WHERE ac_reseller_fk=:ac_id_pk AND ac_deleted_ts IS NULL");
                     $numrows->bindParam(':ac_id_pk', $rowclients['ac_id_pk']);
@@ -140,7 +140,7 @@ class module_controller extends ctrl_module
             $res = array();
             $sql->execute();
             while ($rowclients = $sql->fetch()) {
-                if ($rowclients['ac_user_vc'] != "zadmin") {
+                if ($rowclients['ac_user_vc'] != "wbiadmin") {
                     $currentuser = ctrl_users::GetUserDetail($rowclients['ac_id_pk']);
                     $currentuser['diskspacereadable'] = fs_director::ShowHumanFileSize(ctrl_users::GetQuotaUsages('diskspace', $currentuser['userid']));
                     $currentuser['diskspacequotareadable'] = fs_director::ShowHumanFileSize($currentuser['diskquota']);

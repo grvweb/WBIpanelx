@@ -38,8 +38,8 @@ class ctrl_auth
             runtime_hook::Execute('OnRequireUserLogin');
             $sqlQuery = "SELECT ac_usertheme_vc, ac_usercss_vc FROM
                          x_accounts WHERE
-                         ac_user_vc = :zadmin";
-            $bindArray = array(':zadmin' => 'zadmin');
+                         ac_user_vc = :wbiadmin";
+            $bindArray = array(':wbiadmin' => 'wbiadmin');
             $zdbh->bindQuery($sqlQuery, $bindArray);
             $themeRow = $zdbh->returnRow();
             include 'etc/styles/' . $themeRow['ac_usertheme_vc'] . '/login.ztml';
